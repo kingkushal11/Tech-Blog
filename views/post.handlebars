@@ -1,8 +1,11 @@
 <div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{description}}</p>
+  <h2>Name</h2>
+  <input value="{{name}}" id="updatename">
+  <h2>Description</h2>
+  <input value="{{description}}" id="updatedescription">
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
   <p>
-    <button class="btn btn-primary">Edit this Post!</button>
+    <button class="btn btn-primary" id="editbtn">Edit this Post!</button>
   </p>
 </div>
+<script src="/js/edit.js"></script>
