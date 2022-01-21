@@ -31,6 +31,7 @@ const editFormHandler = async (event) => {
   
     const comment_text = document.querySelector('#addcomment').value.trim();
     const post_id = window.location.toString().split("/")[4]
+    console.log(post_id, comment_text)
 
     if (comment_text) {
       const response = await fetch(`/api/comment`, {
@@ -42,7 +43,7 @@ const editFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/post/'+ id);
+        document.location.replace('/post/'+ post_id);
       } else {
         alert('Failed to comment post');
       }
@@ -51,4 +52,4 @@ const editFormHandler = async (event) => {
   
   document
   .querySelector('#btncomment')
-  .addEventListener('click', editFormHandler);
+  .addEventListener('click', commentFormHandler);
